@@ -54,3 +54,4 @@ jobs:
           registry: gcr.io
           project_id: pete-test-env-on-release
           image_name: onsdigital/eq-questionnaire-launcher:$TAG
+
