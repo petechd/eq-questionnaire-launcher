@@ -41,7 +41,7 @@ jobs:
       - name: Login and Push to GCR
         env:
           DOCKER_BUILDKIT: 1
-          GCLOUD_SERVICE_JSON: echo ${{ secrets.GCLOUD_SERVICE_KEY }} | base64 --decode
+          GCLOUD_SERVICE_JSON: echo ${{ secrets.GCLOUD_SERVICE_KEY }}
           PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
           IMAGE_TAG: ${{ github.event.release.tag_name }}
         run: |
