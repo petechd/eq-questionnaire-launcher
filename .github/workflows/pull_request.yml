@@ -37,7 +37,7 @@ jobs:
         run: docker build -t onsdigital/eq-questionnaire-launcher:$TAG .
       - uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
         with:
-          gcloud_service_key: python -m base64 -e ${{ secrets.GCLOUD_SERVICE_KEY }}
+          gcloud_service_key: python -m base64 -e < ${{ secrets.GCLOUD_SERVICE_KEY }}
           registry: gcr.io
           project_id: pete-test-env-on-release
           image_name: onsdigital/eq-questionnaire-launcher:$TAG
