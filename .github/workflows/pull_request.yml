@@ -35,7 +35,7 @@ jobs:
         run: echo "TAG=${{ github.event.pull_request.head.ref }}" > $GITHUB_ENV
       - name: Build
         run: docker build -t onsdigital/eq-questionnaire-launcher:$TAG .
-      - uses: raccoondev/push-docker-gcr
+      - uses: raccoondev/push-docker-gcr@v1
         with:
           gcr_host: eu.gcr.io
           image_name: my_image
