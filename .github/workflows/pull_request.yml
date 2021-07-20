@@ -44,4 +44,4 @@ jobs:
           # Login to GCR
           echo $GCLOUD_SERVICE_JSON | docker login -u _json_key --password-stdin https://eu.gcr.io/
           # Push Image
-          docker push onsdigital/eq-questionnaire-launcher:latest
+          docker push eu.gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/eq-questionnaire-launcher:latest
