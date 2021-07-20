@@ -43,6 +43,7 @@ jobs:
           DOCKER_BUILDKIT: 1
           GCLOUD_SERVICE_JSON: echo ${{ secrets.GCLOUD_SERVICE_KEY }}
           PROJECT_ID: ${{ secrets.GCLOUD_PROJECT_ID }}
+          IMAGE_TAG: ${{ github.event.release.tag_name }}
         run: |
-          echo $GCLOUD_SERVICE_JSON | docker login -u _json_key --password-stdin https://eu.gcr.io/
+          echo $GCLOUD_SERVICE_JSON | docker login -u _json_key --password-stdin https://eu.gcr.io
           docker push eu.gcr.io/${{ secrets.GCLOUD_PROJECT_ID }}/eq-questionnaire-launcher:$TAG
